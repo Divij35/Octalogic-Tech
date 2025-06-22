@@ -16,9 +16,8 @@ test.describe('Billing Information Test', () => {
 })
 
 test('Update payment method', async ({page}) =>{
-  await page.getByRole('button', {name: '**** **** ****'}).click();
-  await page.getByRole('dialog').locator('div').filter({ hasText: '**** **** ****' }).nth(1)
-  await expect(page.getByRole('dialog').locator('div').filter({ hasText: '**** **** ****' }).nth(1)).toBeVisible();
+  await page.getByRole('heading', { name: '**** **** **** 1234' }).click()
+  await expect(page.getByRole('heading', { name: '**** **** **** 1234' })).toBeVisible();
 });
 });
 
